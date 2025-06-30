@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WeatherCard from './components/WeatherCard';
 import { WeatherData } from './types/weather';
-import { getWeatherData, getCurrentLocationWeather } from './services/weatherApi';
+import { getWeatherData } from './services/weatherApi';
 
 const App: React.FC = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);

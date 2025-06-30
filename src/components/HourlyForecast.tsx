@@ -1,7 +1,6 @@
 import React from 'react';
 import { WeatherData } from '../types/weather';
 import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import { Cloud, Sun, Droplets, CloudRain, CloudLightning, Wind } from 'lucide-react';
 
 interface HourlyForecastProps {

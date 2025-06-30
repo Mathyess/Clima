@@ -37,21 +37,4 @@ export const getWeatherData = async (city: string): Promise<WeatherData> => {
     }
     throw new Error('Erro inesperado. Tente novamente.');
   }
-};
-
-export const getCurrentLocationWeather = async (lat: number, lon: number): Promise<WeatherData> => {
-  try {
-    const response = await weatherApi.get('/forecast.json', {
-      params: {
-        q: `${lat},${lon}`,
-        days: 7
-      }
-    });
-    return response.data;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error('Erro ao buscar dados da localização atual.');
-    }
-    throw new Error('Erro inesperado. Tente novamente.');
-  }
 }; 

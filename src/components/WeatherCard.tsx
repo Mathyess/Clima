@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { WeatherData } from '../types/weather';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import { 
   MapPin, 
-  Thermometer, 
   Wind, 
   Droplets, 
-  Eye, 
-  Sunrise, 
-  Sunset,
   Cloud,
   Sun,
   CloudRain,
@@ -26,12 +20,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData, onSearch }) => {
   const [city, setCity] = useState('');
   const [showInput, setShowInput] = useState(false);
 
-  const { location, current, forecast } = weatherData;
-  const today = forecast.forecastday[0];
-
-  const formatTime = (time: string) => {
-    return format(new Date(`2000-01-01T${time}`), 'HH:mm');
-  };
+  const { location, current } = weatherData;
 
   const getWeatherIcon = (condition: string) => {
     const conditionLower = condition.toLowerCase();
